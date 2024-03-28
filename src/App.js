@@ -12,6 +12,8 @@ import Esercizio3 from './Esercizio3';
 import Esercizio4 from './Esercizio4';
 import Esercizio5 from './Esercizio5';
 import { EsempioUseEffect } from './EsempioUseEffect';
+import ContatoreEffect from './ContatoreEffect';
+import Cronometro from './Cronometro';
 
 
 // COMPONENTE: file js che contiene una funzione javascript
@@ -56,11 +58,14 @@ function App() {
       <Menu/>
       <h1>Questa è la mia applicazione</h1>
 
+      <ContatoreEffect/>
+      <Cronometro/>
       <Contatore/>
       <Utenti/>
       <Anagrafica/>
       <AnagraficaObj/>
       <EsempioUseEffect/>
+      
       
       
       <Esercizio1 {...tabellina4}/>
@@ -71,6 +76,7 @@ function App() {
       <Esercizio3 {...parametroQuantitaNum15}/>
       <Esercizio4 {...parametroMul2}/>
       <Esercizio5 {...parametroMul2Doppio}/>
+      
     </div>
   );
 }
