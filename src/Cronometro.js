@@ -4,32 +4,41 @@ const Cronometro = () => {
 
     let [timer, setTimer] = useState(0)
     let [flagStop, setFlagStop] = useState(true)
+    const [timeoutId, setTimeoutId] = useState(null); // Stato per memorizzare l'ID del timeout
 
     let stop = () => {
         setFlagStop(flagStop => flagStop = true)
         setTimer(valoreAttuale => valoreAttuale)
+        clearTimeout(timeoutId); // Cancella il timeout attivo
         
     }
 
     let start = () => {
+        if (timeoutId) {
+            clearTimeout(timeoutId); // Cancella il timeout precedente
+        }
         setFlagStop(flagStop => flagStop = false)
-        setTimeout(() => {
+        let timeout = setTimeout(() => {
             setTimer(valoreAttuale => valoreAttuale + 1);
           }, 1000);
 
-        
-            
+        setTimeoutId(timeout)
     }
 
     let reset = () => {
         setFlagStop(flagStop => flagStop = true)
         setTimer(valoreAttuale => valoreAttuale - valoreAttuale)
+        clearTimeout(timeoutId); // Cancella il timeout attivo
     }
 
     useEffect( () => {
         if (!flagStop){
-            start()
+            start();
         }
+         // Pulizia dell'effetto: cancella il timeout quando il componente viene smontato o il flagStop cambia
+         return () => {
+            clearTimeout(timeoutId);
+        };
     }, [timer] );
 
   return (
