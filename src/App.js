@@ -7,6 +7,7 @@ import AnagraficaObj from './AnagraficaObj';
 import Esercizio1 from './Esercizio1';
 
 import Esercizio2 from './Esercizio2';
+import CercaProdottoObj from './LastExercise/CercaProdottoObj';
 
 import Esercizio3 from './Esercizio3';
 import Esercizio4 from './Esercizio4';
@@ -14,6 +15,8 @@ import Esercizio5 from './Esercizio5';
 import { EsempioUseEffect } from './EsempioUseEffect';
 import ContatoreEffect from './ContatoreEffect';
 import Cronometro from './Cronometro';
+import FormEta from './LastExercise/FormEta';
+import Calcolatrice from './LastExercise/Calcolatrice';
 
 
 // COMPONENTE: file js che contiene una funzione javascript
@@ -65,6 +68,9 @@ function App() {
       <Anagrafica/>
       <AnagraficaObj/>
       <EsempioUseEffect/>
+      <CercaProdottoObj/>
+      <FormEta/>
+      <Calcolatrice/>
       
       
       
